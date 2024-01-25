@@ -1,0 +1,56 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!autori"><em>Loading... Please refresh once the ASP.NET backend has started</em></p>
+
+<table *ngIf="autori">
+  <thead>
+    <tr>
+      <th>Nume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let autor of autori">
+      <td>{{ autor.Name }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<form #getbyid="ngForm" (ngSubmit)="getbyidf(getbyid.value)">
+  <input type="text" ngModel name="id" placeholder="Enter Id">
+  <br> <br>
+  <button> Get</button>
+</form>
+<table *ngIf="carte">
+  <thead></thead>
+  <tbody>
+    <tr>
+      <td>{{carte.Name}}</td>
+    </tr>
+    <tr *ngFor="let autor of carte.Autori">
+      <td>{{autor.Name}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<form #getbyida="ngForm" (ngSubmit)="getbyida(getbyid.value)">
+  <input type="text" ngModel name="id" placeholder="Enter Id">
+  <br> <br>
+  <button> Get</button>
+</form>
+<table *ngIf="autor">
+  <thead></thead>
+  <tbody>
+    <tr>
+      <td>{{autor.Name}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<form #postform="ngForm" (ngSubmit)="dopost(postform.value)">
+  <input type="text" ngModel name="nume" placeholder="Enter Book Name">
+  <br> <br>
+  <button> Post</button>
+</form>
